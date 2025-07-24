@@ -1,6 +1,3 @@
-# Save the complete README content to a README.md file
-readme_content = """# 🔁 Automated Social Media Poster
-
 This project automates the process of generating, reviewing, and uploading social media posts for articles and images (figures) from your website. Posts are generated using GPT models and pushed to platforms like Twitter, LinkedIn, Mastodon, Bluesky, Facebook, and Pinterest.
 
 ---
