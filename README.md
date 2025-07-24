@@ -14,26 +14,27 @@ This Python-based automation toolkit streamlines content distribution by generat
 
 ## 🗂️ Folder Structure
 .
-├── Approve.py                  # CLI for approving article-based posts
-├── FigureApprove.py            # CLI approval for Pinterest pins
-├── FigureParsing.py            # Parses images and links them to articles
-├── FigureSend.py               # Posts approved Pinterest pins
-├── FigureTracker.py            # Tracker for Pinterest-related data
-├── Figure_prep.py              # Generates Pinterest captions via AI
-├── GUI.py                      # PyQt5 GUI for full workflow control
-├── PinterestTokenGenerator.py  # Pinterest token exchange tool
-├── apiclient.py                # GPT API wrapper
-├── config.py                   # Loads API keys and platform list from config.txt
-├── crawler.py                  # Sitemap crawler for article URLs
-├── main.py                     # Generates social media posts
-├── send.py                     # Uploads approved posts to social platforms
-├── socialmedia.py              # Platform-specific prompt templates
-├── tracker.py                  # Manages article tracker CSV
-├── webparsing.py               # Extracts content from web pages
-├── figure_input.txt            # Input list of image URLs with optional article links/captions
-├── config.txt                  # (User-provided) API keys and platform list
-├── post_outputs/               # Generated social post files
-└── bin/                        # Stores denied posts
+├── Approve.py                  │ CLI for approving article-based posts
+├── FigureApprove.py            │ CLI approval for Pinterest pins
+├── FigureParsing.py            │ Parses images and links them to articles
+├── FigureSend.py               │ Posts approved Pinterest pins
+├── FigureTracker.py            │ Tracker for Pinterest-related data
+├── Figure_prep.py              │ Generates Pinterest captions via AI
+├── GUI.py                      │ PyQt5 GUI for full workflow control
+├── PinterestTokenGenerator.py  │ Pinterest token exchange tool
+├── apiclient.py                │ GPT API wrapper
+├── config.py                   │ Loads API keys and platform list from config.txt
+├── crawler.py                  │ Sitemap crawler for article URLs
+├── main.py                     │ Generates social media posts
+├── send.py                     │ Uploads approved posts to social platforms
+├── socialmedia.py              │ Platform-specific prompt templates
+├── tracker.py                  │ Manages article tracker CSV
+├── webparsing.py               │ Extracts content from web pages
+├── figure_input.txt            │ Input list of images (with optional captions)
+├── config.txt                  │ API keys and platform config (user-provided)
+├── post_outputs/               │ Generated post files
+└── bin/                        │ Denied or rejected post storage
+
 
 
 
