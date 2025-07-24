@@ -131,13 +131,13 @@ python FigureApprove.py
 ### Upload to Pinterest
 python FigureSend.py
 
-##🖥 GUI Mode (Recommended)
+## 🖥 GUI Mode (Recommended)
 
 Always show details
 
 python GUI.py
 
-##✅ Notes
+## ✅ Notes
 
     All data is tracked in article_tracker.csv and figure_tracker.csv
 
@@ -147,10 +147,10 @@ python GUI.py
 
     GPT calls can be routed to OpenAI, Azure, etc.
 
-##📜 License
+## 📜 License
 
 MIT License — feel free to modify and adapt.
-##✍️ Author
+## ✍️ Author
 
 Built by Florisera.com
 For developers automating social outreach from their own content.
