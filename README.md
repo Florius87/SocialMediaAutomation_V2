@@ -1,3 +1,8 @@
+# 📚 More Information
+
+For a full walkthrough, screenshots, API setup details, and automation tips, visit my article:
+🔗 https://florisera.com/automate-your-social-media/
+
 This project automates the process of generating, reviewing, and uploading social media posts for articles and images (figures) from your website. Posts are generated using GPT models and pushed to platforms like Twitter, LinkedIn, Mastodon, Bluesky, Facebook, and Pinterest.
 
 ---
@@ -95,6 +100,10 @@ Always show details
     PINTEREST_ACCESS_TOKEN=...
     PINTEREST_BOARD_ID=...
 
+## 🖥 GUI Mode (Recommended)
+
+python GUI.py
+
 ## 🧠 Workflow
 📰 Article Posts
 
@@ -131,12 +140,6 @@ python FigureApprove.py
 ### Upload to Pinterest
 python FigureSend.py
 
-## 🖥 GUI Mode (Recommended)
-
-Always show details
-
-python GUI.py
-
 ## ✅ Notes
 
     All data is tracked in article_tracker.csv and figure_tracker.csv
@@ -147,6 +150,8 @@ python GUI.py
 
     GPT calls can be routed to OpenAI, Azure, etc.
 
+    Make sure all .txt and .csv files are utf-8 saved, else it will mess up the images in the GUI.
+
 ## 📜 License
 
 MIT License — feel free to modify and adapt.
@@ -155,12 +160,4 @@ MIT License — feel free to modify and adapt.
 Built by Florisera.com
 For developers automating social outreach from their own content.
 """
-Save the file
 
-readme_path = "/mnt/data/README.md"
-with open(readme_path, "w", encoding="utf-8") as f:
-f.write(readme_content)
-
-readme_path
-
-Always show details
