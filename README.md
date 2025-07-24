@@ -95,7 +95,7 @@ Always show details
     PINTEREST_ACCESS_TOKEN=...
     PINTEREST_BOARD_ID=...
 
-🧠 Workflow
+## 🧠 Workflow
 📰 Article Posts
 
 Always show details
@@ -112,7 +112,7 @@ python Approve.py
 # Upload to Twitter (or others)
 python send.py twitter
 
-🖼️ Pinterest (Image Posts)
+## 🖼️ Pinterest (Image Posts)
 
 Always show details
 
