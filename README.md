@@ -1,143 +1,169 @@
-# 📰 Automated Social Media Poster for Articles & Figures
+# Save the complete README content to a README.md file
+readme_content = """# 🔁 Automated Social Media Poster
 
-This Python-based automation toolkit streamlines content distribution by generating, approving, and posting social media content across platforms like Twitter, Mastodon, Bluesky, LinkedIn, Facebook, and Pinterest. It supports both article-based posts and image-based Pinterest pins.
+This project automates the process of generating, reviewing, and uploading social media posts for articles and images (figures) from your website. Posts are generated using GPT models and pushed to platforms like Twitter, LinkedIn, Mastodon, Bluesky, Facebook, and Pinterest.
 
-## 🔧 Features
+---
 
-- **Website Crawling**: Parses your sitemap to collect all article URLs.
-- **Content Extraction**: Extracts title, metadata, and main content using BeautifulSoup.
-- **AI-Generated Posts**: Uses a GPT-based API to generate posts for each platform with platform-specific formatting.
-- **Post Approval Interface**: CLI and PyQt GUI for manual approval or rejection.
-- **Automatic Uploading**: Sends approved posts via relevant APIs (Twitter, Mastodon, Bluesky, Pinterest).
-- **Pinterest Support**: Includes image-based Pinterest post generation using AI.
-- **Tracker System**: Maintains CSV-based logs for tracking what’s posted, approved, or pending.
+## 🚀 Features
 
-## 🗂️ Folder Structure
-.
-├── Approve.py                  │ CLI for approving article-based posts
-├── FigureApprove.py            │ CLI approval for Pinterest pins
-├── FigureParsing.py            │ Parses images and links them to articles
-├── FigureSend.py               │ Posts approved Pinterest pins
-├── FigureTracker.py            │ Tracker for Pinterest-related data
-├── Figure_prep.py              │ Generates Pinterest captions via AI
-├── GUI.py                      │ PyQt5 GUI for full workflow control
-├── PinterestTokenGenerator.py  │ Pinterest token exchange tool
-├── apiclient.py                │ GPT API wrapper
-├── config.py                   │ Loads API keys and platform list from config.txt
-├── crawler.py                  │ Sitemap crawler for article URLs
-├── main.py                     │ Generates social media posts
-├── send.py                     │ Uploads approved posts to social platforms
-├── socialmedia.py              │ Platform-specific prompt templates
-├── tracker.py                  │ Manages article tracker CSV
-├── webparsing.py               │ Extracts content from web pages
-├── figure_input.txt            │ Input list of images (with optional captions)
-├── config.txt                  │ API keys and platform config (user-provided)
-├── post_outputs/               │ Generated post files
-└── bin/                        │ Denied or rejected post storage
+- **Article Support**  
+  - Crawl your sitemap for article URLs  
+  - Extract and format article content  
+  - Generate social media posts using GPT  
+  - Approve or deny posts via GUI or CLI  
+  - Auto-upload to supported platforms  
 
+- **Figure Support (Pinterest)**  
+  - Read image URLs and match to articles  
+  - Generate AI-based image descriptions  
+  - Create Pinterest-optimized post text  
+  - Approve pins and upload via Pinterest API  
 
+- **Workflow GUI**  
+  - PyQt-based desktop app to manage everything  
+  - Inline image preview and approval buttons  
+  - Platform-specific posting controls  
 
+---
+
+## 📁 Project Structure
+
+- **Approve.py** – CLI for approving article-based posts  
+- **FigureApprove.py** – CLI approval for Pinterest pins  
+- **FigureParsing.py** – Parses images and links them to articles  
+- **FigureSend.py** – Posts approved Pinterest pins  
+- **FigureTracker.py** – Tracker for Pinterest-related data  
+- **Figure_prep.py** – Generates Pinterest captions via AI  
+- **GUI.py** – PyQt5 GUI for full workflow control  
+- **PinterestTokenGenerator.py** – Pinterest token exchange tool  
+- **apiclient.py** – GPT API wrapper  
+- **config.py** – Loads API keys and platform list from config.txt  
+- **crawler.py** – Sitemap crawler for article URLs  
+- **main.py** – Generates social media posts  
+- **send.py** – Uploads approved posts to social platforms  
+- **socialmedia.py** – Platform-specific prompt templates  
+- **tracker.py** – Manages article tracker CSV  
+- **webparsing.py** – Extracts content from web pages  
+- **figure_input.txt** – Input list of image URLs and captions  
+- **config.txt** – API credentials and platform settings (user-provided)  
+- **post_outputs/** – Folder for generated post files per platform  
+- **bin/** – Folder for denied or discarded post files  
+
+---
 
 ## ⚙️ Setup
 
-1. **Install requirements**:
-   ```bash
-   pip install -r requirements.txt
+1. **Install requirements**  
+   Create a `requirements.txt` with these:
+   ```txt
+   requests
+   beautifulsoup4
+   PyQt5
+   Pillow
+   tweepy
+   mastodon.py
+   atproto
 
-    Create a config.txt file:
+Then install:
+
+Always show details
+
+pip install -r requirements.txt
+
+    Prepare your config.txt
     Example:
 
-SITEMAP_URL=https://florisera.com/sitemap.xml
-API_URL=https://your-api-endpoint.com
-API_KEY=your_api_key_here
-PLATFORMS=twitter,linkedin,mastodon,bluesky,facebook
+Always show details
 
-TWITTER_API_KEY=...
-TWITTER_API_SECRET=...
-TWITTER_ACCESS_TOKEN=...
-TWITTER_ACCESS_SECRET=...
+    SITEMAP_URL=https://florisera.com/sitemap.xml
+    API_URL=https://your-openai-endpoint
+    API_KEY=your_openai_api_key
+    PLATFORMS=twitter,linkedin,mastodon,bluesky,facebook
 
-MASTODON_ACCESS_TOKEN=...
-MASTODON_API_BASE_URL=https://your.instance
+    TWITTER_API_KEY=...
+    TWITTER_API_SECRET=...
+    TWITTER_ACCESS_TOKEN=...
+    TWITTER_ACCESS_SECRET=...
 
-BLUESKY_HANDLE=...
-BLUESKY_APP_PASSWORD=...
+    MASTODON_ACCESS_TOKEN=...
+    MASTODON_API_BASE_URL=https://your.instance
 
-PINTEREST_CLIENT_ID=...
-PINTEREST_CLIENT_SECRET=...
-PINTEREST_CODE=...       # Acquired via OAuth flow
-PINTEREST_ACCESS_TOKEN=...
-PINTEREST_BOARD_ID=...
+    BLUESKY_HANDLE=yourname.bsky.social
+    BLUESKY_APP_PASSWORD=your_bluesky_password
 
-Run the GUI (recommended):
+    PINTEREST_CLIENT_ID=...
+    PINTEREST_CLIENT_SECRET=...
+    PINTEREST_CODE=...       # Get via OAuth
+    PINTEREST_ACCESS_TOKEN=...
+    PINTEREST_BOARD_ID=...
 
-    python GUI.py
+🧠 Workflow
+📰 Article Posts
 
-💡 Workflow Summary
-Article Posts
+Always show details
 
-    crawler.py → populates article_tracker.csv
-
-    main.py → generates posts using GPT
-
-    Approve.py or GUI → approve/deny each post
-
-    send.py twitter (or platform name) → uploads to social media
-
-Pinterest (Image) Posts
-
-    Place URLs in figure_input.txt
-
-    FigureParsing.py → parses and links figures
-
-    Figure_prep.py → AI descriptions + Pinterest captions
-
-    FigureApprove.py or GUI → approve pins
-
-    FigureSend.py → uploads pins to Pinterest
-
-✅ Example Commands
-
-# Crawl sitemap and initialize tracker
+# Crawl your site and extract article URLs
 python crawler.py
 
-# Generate 3 new posts
+# Generate social posts for articles
 python main.py 3
 
-# Approve posts via CLI
+# Review and approve posts
 python Approve.py
 
-# Upload to Twitter
+# Upload to Twitter (or others)
 python send.py twitter
 
-# Parse figure metadata
+🖼️ Pinterest (Image Posts)
+
+Always show details
+
+# Add images to figure_input.txt
+# Format: image_url, article_url, caption
+
+# Parse and match images to articles
 python FigureParsing.py
 
-# Generate Pinterest descriptions
+# Generate AI descriptions and pin captions
 python Figure_prep.py
 
-# Approve pins
+# Approve via CLI
 python FigureApprove.py
 
-# Send pins
+# Upload to Pinterest
 python FigureSend.py
 
-🛠 Requirements
+🖥 GUI Mode (Recommended)
 
-    Python 3.7+
+Always show details
 
-    requests, beautifulsoup4, tweepy, mastodon.py, atproto, PyQt5, Pillow
+python GUI.py
 
-📌 Notes
+✅ Notes
 
-    All state is tracked in article_tracker.csv and figure_tracker.csv.
+    All data is tracked in article_tracker.csv and figure_tracker.csv
 
-    Posts are stored in post_outputs/<platform> and marked once uploaded.
+    Each platform has character-specific post prompts
 
-    Denied content is moved to the bin/ folder for review or reuse.
+    Posts are only uploaded after manual approval
 
-Author: [Your Name]
-Website: https://florisera.com
+    GPT calls can be routed to OpenAI, Azure, etc.
 
+📜 License
 
-Let me know if you want to split this into multiple files (e.g., `README.md` and `INSTALL.md`) or if y
+MIT License — feel free to modify and adapt.
+✍️ Author
+
+Built by Florisera.com
+For developers automating social outreach from their own content.
+"""
+Save the file
+
+readme_path = "/mnt/data/README.md"
+with open(readme_path, "w", encoding="utf-8") as f:
+f.write(readme_content)
+
+readme_path
+
+Always show details
