@@ -100,44 +100,44 @@ Always show details
 
 Always show details
 
-# Crawl your site and extract article URLs
+### Crawl your site and extract article URLs
 python crawler.py
 
-# Generate social posts for articles
+### Generate social posts for articles
 python main.py 3
 
-# Review and approve posts
+### Review and approve posts
 python Approve.py
 
-# Upload to Twitter (or others)
+### Upload to Twitter (or others)
 python send.py twitter
 
 ## 🖼️ Pinterest (Image Posts)
 
 Always show details
 
-# Add images to figure_input.txt
-# Format: image_url, article_url, caption
+### Add images to figure_input.txt
+### Format: image_url, article_url, caption
 
-# Parse and match images to articles
+### Parse and match images to articles
 python FigureParsing.py
 
-# Generate AI descriptions and pin captions
+### Generate AI descriptions and pin captions
 python Figure_prep.py
 
-# Approve via CLI
+### Approve via CLI
 python FigureApprove.py
 
-# Upload to Pinterest
+### Upload to Pinterest
 python FigureSend.py
 
-🖥 GUI Mode (Recommended)
+##🖥 GUI Mode (Recommended)
 
 Always show details
 
 python GUI.py
 
-✅ Notes
+##✅ Notes
 
     All data is tracked in article_tracker.csv and figure_tracker.csv
 
@@ -147,10 +147,10 @@ python GUI.py
 
     GPT calls can be routed to OpenAI, Azure, etc.
 
-📜 License
+##📜 License
 
 MIT License — feel free to modify and adapt.
-✍️ Author
+##✍️ Author
 
 Built by Florisera.com
 For developers automating social outreach from their own content.
